@@ -24,6 +24,6 @@ COPY --from=builder /app/app .
 # Note: need this to include env to container
 COPY .env .
 
-EXPOSE 3000
+EXPOSE 3000 50051
 
 CMD ["./app"]

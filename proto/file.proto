@@ -1,0 +1,20 @@
+syntax = "proto3";
+option go_package = "github.com/duchoang206h/telebot-storage/proto";
+message UploadFileRequest {
+    bytes content = 1;
+    string name = 2;
+}
+
+message GetFileRequest {
+    string fileId = 1;
+}
+message FileResult {
+    string result = 1;
+}
+message FileResponse {
+    FileResult result = 1;
+}
+service FileStorage {
+    rpc GetFile (GetFileRequest) returns (FileResponse);
+    rpc UploadFile (UploadFileRequest) returns (FileResponse);
+}
